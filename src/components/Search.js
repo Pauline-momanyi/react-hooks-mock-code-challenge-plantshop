@@ -1,15 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 
-function Search() {
+function Search({setSearch, search}) {
+  
+  console.log(search);
+
   return (
     <div className="searchbar">
-      <label htmlFor="search">Search Plants:</label>
-      <input
-        type="text"
-        id="search"
-        placeholder="Type a name to search..."
-        onChange={(e) => console.log("Searching...")}
-      />
+        <label htmlFor="search">Search Plants:</label>
+        <input
+          type="text"
+          id="search"
+          placeholder="Type a name to search..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      
     </div>
   );
 }
